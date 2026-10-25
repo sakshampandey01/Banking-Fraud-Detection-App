@@ -1,0 +1,53 @@
+{
+  "features": [
+    "step",
+    "amount",
+    "log_amount",
+    "is_high_amount",
+    "hour",
+    "is_night",
+    "balance_diff_orig",
+    "balance_diff_dest",
+    "type_enc"
+  ],
+  "p99_amount": 1615979.4715999917,
+  "night_hours": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    22,
+    23
+  ],
+  "type_encoding": {
+    "CASH_IN": 0,
+    "CASH_OUT": 1,
+    "DEBIT": 2,
+    "PAYMENT": 3,
+    "TRANSFER": 4
+  },
+  "scaler_center": [
+    239.0,
+    74841.03,
+    11.223134904552275,
+    0.0,
+    16.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "scaler_scale": [
+    180.0,
+    195292.39,
+    2.746166199976553,
+    1.0,
+    7.0,
+    1.0,
+    10151.0,
+    149150.92499999996,
+    2.0
+  ]
+}

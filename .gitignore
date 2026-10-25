@@ -1,0 +1,24 @@
+# Environment variables & secrets
+.env
+*.env
+
+# Python / Virtual Environment
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large Datasets
+*.csv
+Fraud.csv
+fraud.csv
+data/*.csv
+!data/.gitkeep
+
+# IDE / System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
