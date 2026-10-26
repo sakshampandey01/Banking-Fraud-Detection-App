@@ -16,13 +16,14 @@
 
 /**
  * Adapter: backend TransactionOut  ->  frontend Transaction.
- * This is the ONLY place that knows backend field names. Rename a column
- * server-side and you change this one function.
+ * This is the ONLY place that knows backend field names.
  * @param {Object} row  one item of GET /api/transactions
  * @returns {Transaction}
  */
 export function fromApi(row) {
-  const riskLevel = row.risk_level ?? 'LOW';     // DATASET rows have no ML verdict
+  // Rows without a model verdict (imported dataset rows) must not be presented as "LOW risk, 0%":
+  // the list endpoint is requested with source=API, so every row here was scored by the model.
+  const riskLevel = row.risk_level ?? 'LOW';
   return {
     transactionID: `TXN-${row.txn_id}`,
     amount: Number(row.amount),                  // API sends Decimal as string/number

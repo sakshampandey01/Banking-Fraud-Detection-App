@@ -1,5 +1,4 @@
-import mock from '../data/mockStats.json' with { type: 'json' };
-import { USE_MOCK, getJson } from './client.js';
+import { getJson } from './client.js';
 
 /**
  * @typedef {Object} Stats
@@ -25,5 +24,8 @@ export function statsFromApi(s) {
 
 /** @returns {Promise<Stats>} */
 export async function fetchStats() {
-  return statsFromApi(USE_MOCK ? mock : await getJson('/stats'));
+  return statsFromApi(await getJson('/api/stats'));
 }
+
+/** GET /api/health -> {status, ready_for_scoring, issues:[{code,message}], model:{...}, database:{...}} */
+export const fetchHealth = () => getJson('/api/health');

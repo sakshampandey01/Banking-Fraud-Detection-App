@@ -24,7 +24,7 @@ export default function RiskMetricsBar({ stats }) {
       <MetricCard
         label="Total transactions"
         value={formatCount(stats.totalTransactions)}
-        hint={`${formatCount(stats.dataset.fraud)} labelled fraud in the historical dataset`}
+        hint={stats.dataset.transactions > 0 ? `${formatCount(stats.dataset.fraud)} labelled fraud in the historical dataset` : 'Transactions scored by this application'}
       />
       <MetricCard label="Processed today" value={formatCount(stats.transactionsToday)} hint="Scored live by the model" />
       <MetricCard

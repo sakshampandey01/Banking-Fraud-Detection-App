@@ -1,0 +1,15 @@
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+Fraud.csv
+*.csv
+best_fraud_model_tuned.pkl
+models/*.pkl
+models/preprocessing.json.bak-*
+node_modules/
+frontend/dist/
+frontend/.env.local
+.DS_Store

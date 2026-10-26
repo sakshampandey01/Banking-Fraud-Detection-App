@@ -1,0 +1,15 @@
+# Python 3.10 or newer is required (the code uses `X | None` type syntax).
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0
+psycopg[binary]>=3.2
+pydantic>=2.7
+pydantic-settings>=2.3
+pandas
+numpy
+scikit-learn
+joblib
+# IMPORTANT: use the xgboost / scikit-learn versions from the environment where you trained and saved the
+# model (run `pip show xgboost scikit-learn` in the notebook environment and pin them here). A pickle
+# written by one version can fail or behave differently under another.
+xgboost>=2.0

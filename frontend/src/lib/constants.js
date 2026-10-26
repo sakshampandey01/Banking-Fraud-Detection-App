@@ -1,9 +1,8 @@
-// Mirrors the backend's decision rules (README "Decision rules").
-// The API returns riskLevel already decided; these are only used for display
-// (e.g. drawing threshold lines on a chart) and for validating mock data.
+// Display-only mirrors of the backend's decision rules. The API returns riskLevel already decided;
+// the UI never recomputes it. The real values come from GET /api/health (model.threshold) and each
+// prediction response (decision_threshold) - these are only fallbacks for labels.
 export const RISK_LEVELS = /** @type {const} */ (['LOW', 'MEDIUM', 'HIGH']);
-export const HIGH_RISK_THRESHOLD = 0.908351;   // models/best_fraud_model_tuned.pkl
-export const MEDIUM_RISK_THRESHOLD = 0.5;      // MEDIUM_RISK_THRESHOLD in .env
+export const TRANSACTION_TYPES = /** @type {const} */ (['PAYMENT', 'TRANSFER', 'CASH_OUT', 'CASH_IN', 'DEBIT']);
 
 export const VIEWS = /** @type {const} */ ({
   ALL: 'all',

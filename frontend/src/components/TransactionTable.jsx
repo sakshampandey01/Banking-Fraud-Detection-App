@@ -6,7 +6,7 @@ const COLUMNS = ['Transaction', 'Time', 'Type', 'From → To', 'Amount', 'Risk s
 
 const ROW_TINT = { HIGH: 'bg-red-50/60', MEDIUM: 'bg-amber-50/50', LOW: '' };
 
-export default function TransactionTable({ transactions }) {
+export default function TransactionTable({ transactions, hasAny = true }) {
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
       <table className="min-w-full divide-y divide-slate-200 text-sm">
@@ -30,7 +30,7 @@ export default function TransactionTable({ transactions }) {
           {transactions.length === 0 ? (
             <tr>
               <td colSpan={COLUMNS.length} className="px-4 py-10 text-center text-slate-500">
-                No transactions match this filter.
+                {hasAny ? 'No transactions match this filter.' : 'No transactions yet. Score one with the form above and it will appear here.'}
               </td>
             </tr>
           ) : (

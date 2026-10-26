@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "status": "PENDING_RUN_EXPORT_SCRIPT",
+    "note": "p99_amount, scaler_center and scaler_scale need the full Fraud.csv. Run: python scripts/export_preprocessing.py  (it overwrites this file and sets status to VERIFIED_FROM_DATASET). Until then the API refuses to score transactions.",
+    "filled_from_notebook": ["features", "night_hours", "type_encoding"],
+    "needs_dataset": ["p99_amount", "scaler_center", "scaler_scale"]
+  },
+  "features": [
+    "step",
+    "amount",
+    "log_amount",
+    "is_high_amount",
+    "hour",
+    "is_night",
+    "balance_diff_orig",
+    "balance_diff_dest",
+    "type_enc"
+  ],
+  "p99_amount": null,
+  "night_hours": [0, 1, 2, 3, 4, 5, 22, 23],
+  "type_encoding": {
+    "CASH_IN": 0,
+    "CASH_OUT": 1,
+    "DEBIT": 2,
+    "PAYMENT": 3,
+    "TRANSFER": 4
+  },
+  "scaler_center": null,
+  "scaler_scale": null
+}
